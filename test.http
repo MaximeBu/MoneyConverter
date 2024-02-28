@@ -1,0 +1,20 @@
+### Route pour récupérer toutes les conversions pour le fichier CSV coté client
+curl -x GET 'http://localhost:3000/dataClient'
+
+### Route conversion en fichier CSV coté serveur
+curl -x GET 'http://localhost:3000/dataServer'
+
+### Route pour faire une conversion USD à CAD
+curl -X POST -H "Content-Type: application/json" \
+-d '{"deviseOrigine": "USD",
+    "deviseDestination": "CAD",
+    "montantInitial": 20}' \
+http://localhost:3000/tauxDevises
+
+### Route pour faire une conversion CAD à USD
+curl -X POST -H "Content-Type: application/json" \
+-d '{"deviseOrigine": "CAD",
+    "deviseDestination": "USD",
+    "montantInitial": 20}' \
+http://localhost:3000/tauxDevises
+

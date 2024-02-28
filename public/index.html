@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion de devises</title>
+        <!-- Appel de Bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  </head>
+
+  <body>
+
+    <div class="container is-fluid" style="margin-top: 8%; width: 50%;">
+      
+      <div class="box">
+        <div class="tabs is-centered">
+          <ul>
+            <li class="is-active"><a id="USDToCAD">Convertir de USD en CAD</a></li>
+            <li><a id="CADToUSD">Convertir de CAD en USD</a></li>
+          </ul>
+        </div>
+
+        <form style="display: flex;">
+          <!-- Champ USD -->
+          <div style="width: 42%;">
+            <label class="label" id="labelDeviseInitiale">Valeur en USD</label>
+            <p class="control has-icons-left">
+              <input class="input" type="number" id="deviseInitial" required>
+              <span><i id="alertEmail"></i></span>
+              <span class="icon is-small is-left">
+                <i class="fa-solid fa-dollar-sign"></i>
+              </span>
+            </p>
+            <!-- Erreur champ Courriel -->
+            <span id="erreurDeviseInitale" style="color: red;visibility: hidden;">Le champ doit être rempli</span>
+          </div>
+
+          <span class="icon" style="padding: 8%;">
+            <i class="fa-solid fa-money-bill-transfer"></i>
+          </span>
+    
+          <!-- Champ CAD -->
+          <div style="width: 42%;">
+            <label class="label" id="labelDeviseFinale">Valeur en CAD </label>
+            <p class="control has-icons-left">
+              <input class="input" type="number" id="deviseFinale" readonly>
+              <span class="icon is-small is-left">
+                <i class="fa-solid fa-dollar-sign"></i>
+              </span>
+            </p>
+          </div>
+    
+        </form>
+
+          <!-- bouton pour convertir -->
+        <div>
+          <button type="button" id="btnConversion" class="button is-info is-medium" style="margin: 10px 35%; width: 30%;">
+            Convertir
+          </button>
+        </div>
+        <div>
+          <!-- bouton pour télécharger l'historique des conversions en fichier CSV -->
+          <a id="linkCSV"></a>
+            <button type="button" id="btnCSV" class="button is-ghost is-medium" style="margin: 10px 20%;">
+              <span class="icon">
+                <i class="fa-solid fa-circle-down"></i>
+              </span>
+              <span>Télécharger l'historique en fichier CSV
+            </button>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+    
+
+    <!-- Appel du script -->
+    <script src="script.js"></script>
+
+  </body>
+
+</html>
